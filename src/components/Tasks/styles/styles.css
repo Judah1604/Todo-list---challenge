@@ -35,6 +35,9 @@
   border-bottom: 2px solid #dddddd;
   cursor: pointer;
 }
+.tasks .todos .todo:last-child {
+  border: none;
+}
 .tasks .todos .todo .checkbox {
   margin-right: 15px;
   border: 1px solid #2d65ff;

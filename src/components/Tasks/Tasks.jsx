@@ -2,8 +2,10 @@ import { useState } from "react";
 import Todo from './Todo'
 import "./styles/styles.css";
 
-function Tasks({ todos, setTodos, inputRef, setIsEditing, editTodo }) {
-	const [filter, setFilter] = useState("all");
+function Tasks({ todos, setTodos, inputRef, editTodo }) {
+	// const [filter, setFilter] = useState("all");
+
+    // const uncheckedTodos = todos.filter((todo) => todo.isChecked === false);
 
 	const onFocus = () => {
 		inputRef.current.focus();
@@ -13,7 +15,7 @@ function Tasks({ todos, setTodos, inputRef, setIsEditing, editTodo }) {
 		<div className="tasks">
 			{todos.length !== 0 ? (
 				<>
-					<div className="toggles">
+					{/* <div className="toggles">
 						<div
 							className={
 								filter === "all" ? "toggle active" : "toggle"
@@ -32,7 +34,7 @@ function Tasks({ todos, setTodos, inputRef, setIsEditing, editTodo }) {
 						>
 							Unchecked
 						</div>
-					</div>
+					</div> */}
 					<div className="todos">
 						{todos.map((todo) => {
 							return (
@@ -47,6 +49,31 @@ function Tasks({ todos, setTodos, inputRef, setIsEditing, editTodo }) {
 							);
 						})}
 					</div>
+					{/* <div className="todos">
+						{filter === 'all' ? todos.map((todo) => {
+							return (
+								<Todo
+									key={todo.id}
+									name={todo.name}
+									id={todo.id}
+									todos={todos}
+									setTodos={setTodos}
+                                    editTodo={editTodo}
+								/>
+							);
+						}) : uncheckedTodos.map((todo) => {
+							return (
+								<Todo
+									key={todo.id}
+									name={todo.name}
+									id={todo.id}
+									todos={todos}
+									setTodos={setTodos}
+									editTodo={editTodo}
+								/>
+							);
+						})}
+					</div> */}
 				</>
 			) : (
 				<>

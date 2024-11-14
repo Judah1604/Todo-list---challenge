@@ -39,6 +39,10 @@
             border-bottom: 2px solid #dddddd;
             cursor: pointer;
 
+            &:last-child {
+                border: none;
+            }
+
             .checkbox {
                 margin-right: 15px;
                 border: 1px solid #2d65ff;

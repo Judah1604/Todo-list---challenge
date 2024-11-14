@@ -1,13 +1,24 @@
 import React, { useState } from "react";
 
 function Todo({ name, id, todos, setTodos, editTodo }) {
-	const [isChecked, setIsChecked] = useState(false);
+	const [isChecked, setIsChecked] = useState();
 
 	const checkTodo = () => {
-		const todoTobeChecked = todos.filter((todo) => todo.id == id);
-		todoTobeChecked.isChecked = isChecked;
-		setIsChecked(!isChecked);
+		// const todoTobeChecked = todos.find((todo) => todo.id === id);
+		// const index = todos.findIndex((todo) => todo.id === id);
+        // const checked = todoTobeChecked.isChecked
+
+		// const newTodos = [...todos];
+		// newTodos[index] = {
+		// 	...todoTobeChecked,
+		// 	isChecked: !checked, // Toggle isChecked
+		// };
+
+		// setTodos(newTodos);
+        // setIsChecked(checked)
+        setIsChecked(!isChecked)
 	};
+
 
 	const deleteTodo = () => {
 		const newTodos = todos.filter((todo) => todo.id !== id);
