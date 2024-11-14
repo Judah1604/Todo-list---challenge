@@ -1,0 +1,94 @@
+.tasks {
+    width: 100%;
+    background-color: white;
+    padding: 0 1em;
+    border-radius: 8px;
+    margin-top: 30px;
+
+    .toggles {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .toggle {
+            width: 49%;
+            text-align: center;
+            font-weight: 600;
+            color: #2d65ff;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            padding: 20px;
+            transition: 0.3s ease;
+
+            &.active,
+            &:hover {
+                border-color: #2d65ff;
+            }
+        }
+    }
+
+    .todos {
+        margin-top: 5px;
+
+        .todo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 20px;
+            border-bottom: 2px solid #dddddd;
+            cursor: pointer;
+
+            .checkbox {
+                margin-right: 15px;
+                border: 1px solid #2d65ff;
+                display: flex;
+                align-items: center;
+                padding: 6px 7px;
+                border-radius: 50%;
+                position: relative;
+
+                i {
+                    font-size: 0.8em;
+                    margin-top: 1px;
+                }
+
+                &.checked {
+                    background-color: #2d65ff;
+
+                    i {
+                        color: white;
+                    }
+                }
+            }
+
+            p.checked {
+                text-decoration: line-through;
+            }
+
+            &>* {
+                display: flex;
+                align-items: center;
+            }
+
+            .icons {
+                gap: 30px;
+            }
+
+            i {
+                color: #2d65ff;
+                font-size: 1.2em;
+            }
+        }
+    }
+
+    .info {
+        text-align: center;
+        padding: 20px;
+        color: #2d65ff;
+
+        span {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}

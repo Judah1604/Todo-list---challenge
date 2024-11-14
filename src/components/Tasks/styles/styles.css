@@ -1,0 +1,78 @@
+.tasks {
+  width: 100%;
+  background-color: white;
+  padding: 0 1em;
+  border-radius: 8px;
+  margin-top: 30px;
+}
+.tasks .toggles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tasks .toggles .toggle {
+  width: 49%;
+  text-align: center;
+  font-weight: 600;
+  color: #2d65ff;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  padding: 20px;
+  transition: 0.3s ease;
+}
+.tasks .toggles .toggle.active, .tasks .toggles .toggle:hover {
+  border-color: #2d65ff;
+}
+.tasks .todos {
+  margin-top: 5px;
+}
+.tasks .todos .todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 20px;
+  border-bottom: 2px solid #dddddd;
+  cursor: pointer;
+}
+.tasks .todos .todo .checkbox {
+  margin-right: 15px;
+  border: 1px solid #2d65ff;
+  display: flex;
+  align-items: center;
+  padding: 6px 7px;
+  border-radius: 50%;
+  position: relative;
+}
+.tasks .todos .todo .checkbox i {
+  font-size: 0.8em;
+  margin-top: 1px;
+}
+.tasks .todos .todo .checkbox.checked {
+  background-color: #2d65ff;
+}
+.tasks .todos .todo .checkbox.checked i {
+  color: white;
+}
+.tasks .todos .todo p.checked {
+  text-decoration: line-through;
+}
+.tasks .todos .todo > * {
+  display: flex;
+  align-items: center;
+}
+.tasks .todos .todo .icons {
+  gap: 30px;
+}
+.tasks .todos .todo i {
+  color: #2d65ff;
+  font-size: 1.2em;
+}
+.tasks .info {
+  text-align: center;
+  padding: 20px;
+  color: #2d65ff;
+}
+.tasks .info span {
+  text-decoration: underline;
+  cursor: pointer;
+}/*# sourceMappingURL=styles.css.map */
