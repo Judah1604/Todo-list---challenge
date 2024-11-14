@@ -4,30 +4,50 @@ import Tasks from "./components/Tasks/Tasks";
 import "./Styles/base.css";
 
 function App() {
-	const [input, setInput] = useState(""),
-		[todos, setTodos] = useState([]),
-		[todo, setTodo] = useState({
-			id: Math.floor(Math.random() * 100000),
-			name: input,
-			isChecked: false,
-		}),
-        inputRef = useRef();
+	const [todos, setTodos] = useState([]),
+		[isEditing, setIsEditing] = useState(false),
+		[input, setInput] = useState(""),
+		[edit, setEdit] = useState({}),
+		inputRef = useRef();
 
-	const addTodo = () => {
-        setTodos(prevTodos => prevTodos.push(todo))
-        
-    };
+	const updateTodo = () => {
+		const newTodos = [...todos];
+		newTodos[edit.index] = {
+			...edit.todoTobeEdited,
+			name: input, 
+		};
+		setTodos(newTodos);
+		setInput("");
+		setIsEditing(false);
+	};
+
+	const editTodo = (id) => {
+		setIsEditing(true);
+		const todoTobeEdited = todos.find((todo) => todo.id == id);
+		setInput(todoTobeEdited.name);
+        setEdit({todoTobeEdited: todoTobeEdited, index: todos.findIndex((todo) => todo.id == id)})
+	};
+
 	return (
 		<>
 			<div className="container">
 				<h1 className="header">Todo App</h1>
 				<Input
+					inputRef={inputRef}
+					setTodos={setTodos}
+					todos={todos}
+					isEditing={isEditing}
+					setIsEditing={setIsEditing}
 					input={input}
 					setInput={setInput}
-					addTodo={addTodo}
-					inputRef={inputRef}
+                    updateTodo={updateTodo}
 				/>
-				<Tasks input={input} todos={todos} inputRef={inputRef} />
+				<Tasks
+					todos={todos}
+					setTodos={setTodos}
+					inputRef={inputRef}
+                    editTodo={editTodo}
+				/>
 			</div>
 		</>
 	);
